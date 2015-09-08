@@ -20,7 +20,7 @@ class Recolize_PageType
      */
     public function initialize()
     {
-        add_action('wp_head', array($this, 'dispatch'));
+        add_action('wp_head', array($this, 'dispatch'), 1);
         return $this;
     }
 
@@ -44,7 +44,7 @@ class Recolize_PageType
     }
 
     /**
-     * Return all required Recolize parameters for blog post page.
+     * Return all required Recolize parameters for a blog post page.
      *
      * @return array
      */
@@ -54,7 +54,7 @@ class Recolize_PageType
     }
 
     /**
-     * Return all required Recolize parameters for category page.
+     * Return all required Recolize parameters for a category page.
      *
      * @return array
      */
@@ -73,7 +73,7 @@ class Recolize_PageType
     /**
      * Render the Recolize parameters JavaScript code.
      *
-     * @param array $parameters
+     * @param array $parameters the parameters for the current page type
      *
      * @return Recolize_PageType
      */

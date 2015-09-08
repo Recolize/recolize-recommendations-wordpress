@@ -47,7 +47,7 @@ class Recolize_Admin_Settings
      */
     public function addMenu()
     {
-        add_options_page('Recolize Recommendation Engine', 'Recolize', 'manage_options', 'recolize', array($this, 'renderOptionsPage'));
+        add_options_page('Recolize', 'Recolize', 'manage_options', 'recolize', array($this, 'renderOptionsPage'));
         return $this;
     }
 
@@ -62,7 +62,7 @@ class Recolize_Admin_Settings
 
         add_settings_section(
             'Recolize_pluginPage_section',
-            '<img src="http://www.recolize.com/media/wysiwyg/recolize_logo_200.png" />',
+            '<img src="https://www.recolize.com/media/wysiwyg/recolize_logo_200.png" />',
             array($this, 'renderSettingsHeader'),
             'pluginPage'
         );
