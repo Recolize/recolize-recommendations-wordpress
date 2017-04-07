@@ -29,6 +29,7 @@ if (function_exists('add_action') === false) {
 
 require_once plugin_dir_path(__FILE__) . 'includes/PageType.php';
 require_once plugin_dir_path(__FILE__) . 'includes/JavaScriptSnippet.php';
+require_once plugin_dir_path(__FILE__) . 'includes/RssFeed.php';
 require_once plugin_dir_path(__FILE__) . 'admin/Settings.php';
 
 $pageType = new Recolize_PageType();
@@ -36,6 +37,9 @@ $pageType->initialize();
 
 $javaScriptSnippet = new Recolize_JavaScriptSnippet();
 $javaScriptSnippet->initialize();
+
+$rssFeed = new Recolize_RssFeed();
+$rssFeed->initialize();
 
 if (is_admin() === true) {
     $settings = new Recolize_Admin_Settings();
