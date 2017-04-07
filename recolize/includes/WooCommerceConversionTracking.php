@@ -44,10 +44,11 @@ class Recolize_WooCommerceConversionTracking
 EOF;
 
         foreach ($order->get_items() as $item) {
-            /** @var WC_Order_Item_Product $item */
+            /** @var WC_Order_Item $item */
             /** @var WC_Product $product */
-            $product = $item->get_product();
-            $snippet .= sprintf("    RecolizeParameters['saleData']['%s'] = '%.2f';\n", get_the_guid($product->get_id()), $item->get_total());
+            $product = $order->get_product_from_item($item); // we use the deprecated method for compatibility reasons
+            $total = $order->get_line_total($item, true);
+            $snippet .= sprintf("    RecolizeParameters['saleData']['%s'] = '%.2f';\n", html_entity_decode(get_the_guid($product->get_id())), $total);
         }
 
         $snippet .= "</script>";
