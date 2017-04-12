@@ -36,6 +36,8 @@ class Recolize_Admin_Settings
     {
         add_action('admin_menu', array($this, 'addMenu'));
         add_action('admin_init', array($this, 'addSections'));
+        add_filter('plugin_row_meta', array($this, 'addAdditionalInformationToPluginRow'), 10, 2);
+        add_filter('plugin_action_links_' . RECOLIZE_PLUGIN_BASENAME, array($this, 'addAdditionalActionsToPluginRow'));
 
         return $this;
     }
@@ -134,5 +136,43 @@ class Recolize_Admin_Settings
     {
         $options = get_option(self::OPTION_NAMESPACE);
         return $options[self::OPTION_NAME_JAVASCRIPT_SNIPPET];
+    }
+
+    /**
+     * Add additional information to the row meta on the plugin screen.
+     *
+     * @param array $links plugin row meta
+     * @param string $file plugin base file
+     *
+     * @return array
+     */
+    public static function addAdditionalInformationToPluginRow($links, $file)
+    {
+        if (RECOLIZE_PLUGIN_BASENAME == $file) {
+            $rowMeta = array(
+                'tool' => '<a target="_blank" href="' . esc_url(apply_filters('recolize_tool_url', 'https://tool.recolize.com')) . '" aria-label="' . esc_attr__('Login to Recolize Tool', 'recolize') . '">' . esc_html__('Login to Recolize', 'recolize') . '</a>',
+                'support' => '<a target="_blank" href="' . esc_url(apply_filters('recolize_support_url', 'https://www.recolize.com/en/contact-us/')) . '" aria-label="' . esc_attr__('Contact Us', 'recolize') . '">' . esc_html__('Contact Us', 'recolize') . '</a>',
+            );
+
+            return array_merge($links, $rowMeta);
+        }
+
+        return (array) $links;
+    }
+
+    /**
+     * Show action links on the plugin screen.
+     *
+     * @param array $links plugin action links
+     *
+     * @return array
+     */
+    public static function addAdditionalActionsToPluginRow($links)
+    {
+        $actionLinks = array(
+            'settings' => '<a href="' . admin_url('options-general.php?page=recolize') . '" aria-label="' . esc_attr__('View Recolize settings', 'recolize') . '">' . esc_html__('Settings', 'recolize') . '</a>',
+        );
+
+        return array_merge($actionLinks, $links);
     }
 }
