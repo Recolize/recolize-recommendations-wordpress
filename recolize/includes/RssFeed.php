@@ -41,12 +41,21 @@ class Recolize_RssFeed
         /** @var WP_Post $post */
         global $post;
 
-        $extraItemInformation = sprintf(
-            '<image_url>%s</image_url><product><price>%.2f</price><image>%s</image></product>',
-            $this->getPostImage($post->ID),
-            $this->getProductPrice($post->ID),
-            $this->getPostImage($post->ID)
-        );
+        $extraItemInformation = '';
+
+        $postImage = $this->getPostImage($post->ID);
+        if (empty($postImage) === false) {
+            $extraItemInformation = sprintf('<image_url>%s</image_url>', $postImage);
+        }
+
+        $productPrice = $this->getProductPrice($post->ID);
+        if ($productPrice !== null) {
+            $extraItemInformation .= sprintf(
+                '<product><price>%.2f</price><image>%s</image></product>',
+                $productPrice,
+                $postImage
+            );
+        }
 
         echo $extraItemInformation;
 
@@ -56,14 +65,14 @@ class Recolize_RssFeed
     /**
      * Return the image for the given post id.
      *
-     * @param integer $postId
-     * @param string $size
+     * @param integer $postId the id of the post
+     * @param string $size the image size to return to
      *
      * @return string
      */
     private function getPostImage($postId, $size = 'full')
     {
-        if (function_exists ('has_post_thumbnail') === false || has_post_thumbnail($postId) === false) {
+        if (function_exists('has_post_thumbnail') === false || has_post_thumbnail($postId) === false) {
             return '';
         }
 
@@ -83,17 +92,20 @@ class Recolize_RssFeed
     /**
      * Return the price for the given post id if the WooCommerce plugin is installed.
      *
-     * @param integer $postId
+     * @param integer $postId the id of the post
      *
      * @return null|float
      */
     private function getProductPrice($postId)
     {
-        if (class_exists('WC_Product') === false) {
+        if (function_exists('wc_get_product') === false) {
             return null;
         }
-
-        $product = new WC_Product($postId);
+        
+        $product = wc_get_product($postId);
+        if (empty($product) === true) {
+            return null;
+        }
 
         return $product->price;
     }
