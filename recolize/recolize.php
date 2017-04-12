@@ -33,6 +33,7 @@ if (defined('RECOLIZE_PLUGIN_BASENAME') === false) {
 
 require_once plugin_dir_path(__FILE__) . 'includes/PageType.php';
 require_once plugin_dir_path(__FILE__) . 'includes/JavaScriptSnippet.php';
+require_once plugin_dir_path(__FILE__) . 'includes/WooCommerceConversionTracking.php';
 require_once plugin_dir_path(__FILE__) . 'includes/RssFeed.php';
 require_once plugin_dir_path(__FILE__) . 'admin/Settings.php';
 
@@ -41,6 +42,9 @@ $pageType->initialize();
 
 $javaScriptSnippet = new Recolize_JavaScriptSnippet();
 $javaScriptSnippet->initialize();
+
+$woocommerceConversionTracking = new Recolize_WooCommerceConversionTracking();
+$woocommerceConversionTracking->initialize();
 
 $rssFeed = new Recolize_RssFeed();
 $rssFeed->initialize();
