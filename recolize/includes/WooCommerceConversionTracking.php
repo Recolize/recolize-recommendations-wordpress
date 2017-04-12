@@ -47,7 +47,7 @@ EOF;
             /** @var WC_Order_Item $item */
             /** @var WC_Product $product */
             $product = $order->get_product_from_item($item); // we use the deprecated method for compatibility reasons
-            $total = $order->get_line_total($item, true);
+            $total = $order->get_line_total($item, false);
             $snippet .= sprintf("    RecolizeParameters['saleData']['%s'] = '%.2f';\n", html_entity_decode(get_the_guid($product->get_id())), $total);
         }
 
