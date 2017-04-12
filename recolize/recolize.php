@@ -27,9 +27,14 @@ if (function_exists('add_action') === false) {
     exit;
 }
 
+if (defined('RECOLIZE_PLUGIN_BASENAME') === false) {
+    define('RECOLIZE_PLUGIN_BASENAME', plugin_basename(__FILE__));
+}
+
 require_once plugin_dir_path(__FILE__) . 'includes/PageType.php';
 require_once plugin_dir_path(__FILE__) . 'includes/JavaScriptSnippet.php';
 require_once plugin_dir_path(__FILE__) . 'includes/WooCommerceConversionTracking.php';
+require_once plugin_dir_path(__FILE__) . 'includes/RssFeed.php';
 require_once plugin_dir_path(__FILE__) . 'admin/Settings.php';
 
 $pageType = new Recolize_PageType();
@@ -40,6 +45,9 @@ $javaScriptSnippet->initialize();
 
 $woocommerceConversionTracking = new Recolize_WooCommerceConversionTracking();
 $woocommerceConversionTracking->initialize();
+
+$rssFeed = new Recolize_RssFeed();
+$rssFeed->initialize();
 
 if (is_admin() === true) {
     $settings = new Recolize_Admin_Settings();
