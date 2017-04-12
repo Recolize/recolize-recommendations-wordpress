@@ -27,6 +27,10 @@ if (function_exists('add_action') === false) {
     exit;
 }
 
+if (defined('RECOLIZE_PLUGIN_BASENAME') === false) {
+    define('RECOLIZE_PLUGIN_BASENAME', plugin_basename(__FILE__));
+}
+
 require_once plugin_dir_path(__FILE__) . 'includes/PageType.php';
 require_once plugin_dir_path(__FILE__) . 'includes/JavaScriptSnippet.php';
 require_once plugin_dir_path(__FILE__) . 'admin/Settings.php';
