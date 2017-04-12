@@ -2,8 +2,8 @@
 Contributors: recolize
 Tags: recolize, recommendation, personalization, recommended items, posts, engine, personal
 Requires at least: 3.1
-Tested up to: 4.3
-Stable tag: 1.0.0
+Tested up to: 4.7
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
 
@@ -34,6 +34,12 @@ Please visit our website at http://www.recolize.com/en/faq.
 Please find all information regarding our Recolize Recommendation Engine on our website http://www.recolize.com.
 
 == Changelog ==
+
+= 1.1.0 =
+* Post image, product image and price are now contained in the RSS feed automatically
+* Conversions from WooCommerce are tracked
+* Full compatibility with WooCommerce 2.x and 3.x
+* Additional links to settings and tool on the plugins page
 
 = 1.0.0 =
 * The first version of the Recolize WordPress plugin.
