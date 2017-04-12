@@ -142,7 +142,7 @@ class Recolize_Admin_Settings
      * Add additional information to the row meta on the plugin screen.
      *
      * @param array $links plugin row meta
-     * @param mixed $file plugin base file
+     * @param string $file plugin base file
      *
      * @return array
      */
@@ -157,13 +157,13 @@ class Recolize_Admin_Settings
             return array_merge($links, $rowMeta);
         }
 
-        return (array)$links;
+        return (array) $links;
     }
 
     /**
      * Show action links on the plugin screen.
      *
-     * @param array $links Plugin Action links
+     * @param array $links plugin action links
      *
      * @return array
      */
