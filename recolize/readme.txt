@@ -2,10 +2,10 @@
 Contributors: recolize
 Tags: recolize, recommendation, personalization, recommended items, posts, engine, personal
 Requires at least: 3.1
-Tested up to: 4.9
-Stable tag: 1.1.2
+Tested up to: 5.4
+Stable tag: 1.1.3
 License: GPLv3 or later
-License URI: http://opensource.org/licenses/GPL-3.0
+License URI: https://opensource.org/licenses/GPL-3.0
 
 This plugin enables you to use the Recolize Recommendation Engine in your WordPress blog to offer a personalized blog experience.
 
@@ -14,7 +14,7 @@ This plugin enables you to use the Recolize Recommendation Engine in your WordPr
 With the Recolize Recommendation Engine you can offer personalized blog post recommendations directly on your WordPress site.
 Individual recommendations increase the average user visiting time on your page and improve cross-linking of articles.
 
-*Note:* A Recolize account is required for this plugin to work. Please register for free on our website http://www.recolize.com.
+*Note:* A Recolize account is required for this plugin to work. Please register for free on our website https://www.recolize.com.
 
 == Installation ==
 
@@ -27,13 +27,16 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-Please visit our website at http://www.recolize.com/en/faq.
+Please visit our website at https://www.recolize.com/en/faq.
 
 == Screenshots ==
 
-Please find all information regarding our Recolize Recommendation Engine on our website http://www.recolize.com.
+Please find all information regarding our Recolize Recommendation Engine on our website https://www.recolize.com.
 
 == Changelog ==
+
+= 1.1.3 =
+* Full compatibility with WordPress up to 5.4
 
 = 1.1.2 =
 * Full compatibility with WordPress 4.9
