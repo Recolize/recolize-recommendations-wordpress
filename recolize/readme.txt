@@ -2,7 +2,7 @@
 Contributors: recolize
 Tags: recolize, recommendation, personalization, recommended items, posts, engine, personal
 Requires at least: 3.1
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: https://opensource.org/licenses/GPL-3.0
