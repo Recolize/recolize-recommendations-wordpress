@@ -2,8 +2,8 @@
 Contributors: recolize
 Tags: recolize, recommendation, personalization, recommended items, posts, engine, personal
 Requires at least: 3.1
-Tested up to: 5.5
-Stable tag: 1.1.4
+Tested up to: 5.7
+Stable tag: 1.1.5
 License: GPLv3 or later
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -34,6 +34,9 @@ Please visit our website at https://www.recolize.com/en/faq.
 Please find all information regarding our Recolize Recommendation Engine on our website https://www.recolize.com.
 
 == Changelog ==
+
+= 1.1.5 =
+* Full compatibility with WordPress up to 5.7
 
 = 1.1.4 =
 * Full compatibility with WordPress up to 5.5
