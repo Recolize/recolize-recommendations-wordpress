@@ -3,7 +3,7 @@
 Plugin Name: 	Recolize Recommendation Engine
 Plugin URI: 	https://www.recolize.com/
 Description: 	This plugin enables you to use the Recolize Recommendation Engine in your WordPress blog to offer a personalized blog experience.
-Version: 		1.1.4
+Version: 		1.1.5
 Author: 		Recolize GmbH <service@recolize.com>
 Author URI: 	https://www.recolize.com/
 License:		GNU General Public License Version 3 (GPLv3)
